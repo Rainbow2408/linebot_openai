@@ -48,8 +48,8 @@ def handle_message(event):
         # 在回覆訊息後面附上次數資訊（選用）
         final_ret = f"{ret}\n\n(這是 OpenAI 今日回覆的第 {msg_count} 則訊息)"
     except:
-        ret = '發生錯誤！'
-    line_bot_api.reply_message(event.reply_token,TextSendMessage(text=ret))
+        final_ret = '發生錯誤！'
+    line_bot_api.reply_message(event.reply_token,TextSendMessage(text=final_ret))
 
 if __name__ == '__main__':
     app.run()
